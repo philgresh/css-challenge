@@ -28,3 +28,42 @@
   font-size: 16px;
   padding: 12px 24px;
 }
+
+.delete-item {
+  background-color: #26293a;
+  color: white;
+  box-shadow: 0px 3px 4px 1px #3333;
+
+  &::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f1f8';
+    color: rgb(233, 233, 233);
+    margin-right: 10px;
+  }
+
+  &:active {
+    background-color: #1b1e2c;
+  }
+
+  &.notext {
+    animation: slidetext 5s linear;
+  }
+}
+
+.icon::before {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes slidetext {
+  0% {
+  }
+  50% {
+    content: '';
+  }
+  100% {
+  }
+}

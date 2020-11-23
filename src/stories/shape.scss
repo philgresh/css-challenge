@@ -1,0 +1,67 @@
+.shape-interconnected {
+  width: 400px;
+  height: 300px;
+  position: relative;
+  background-color: black;
+  color: white;
+  margin: 1rem;
+  border-radius: 4px;
+
+  $width: 50px;
+  $duration: 4s;
+
+  & > .square,
+  & > .circle {
+    width: $width;
+    height: $width;
+    position: absolute;
+    border: 5px solid white;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: difference;
+    background-color: black;
+  }
+
+  & > .square {
+    border-radius: 4px;
+    top: 45%;
+    left: 55%;
+    animation: move-down-left $duration steps(4, start) infinite;
+  }
+
+  & > .circle {
+    border-radius: 50%;
+    top: 55%;
+    left: 45%;
+    animation: move-up-right $duration steps(4, start) infinite;
+  }
+}
+
+@keyframes move-down-left {
+  0% {
+    top: 25%;
+    left: 75%;
+  }
+  50% {
+    top: 45%;
+    left: 55%;
+  }
+  100% {
+    top: 25%;
+    left: 75%;
+  }
+}
+
+@keyframes move-up-right {
+  0% {
+    top: 75%;
+    left: 25%;
+  }
+  50% {
+    top: 55%;
+    left: 45%;
+  }
+  100% {
+    top: 75%;
+    left: 25%;
+  }
+}
