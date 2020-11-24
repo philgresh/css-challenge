@@ -1,67 +1,121 @@
+/* our root css vars */
+:root {
+  --size: 500px;
+  --border: 5px;
+  --duration: 4s;
+  --color: white;
+}
+
+BODY {
+  background: black;
+  min-height: 100%;
+}
+
+/* reset our box sizing on psuedo elems */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+/* animate height and width equally  */
+@keyframes shape-interconnected {
+  0% {
+    width: var(--size);
+    height: var(--size);
+  }
+  50% {
+    width: calc(var(--size) * 0.6);
+    height: calc(var(--size) * 0.6);
+  }
+  100% {
+    width: var(--size);
+    height: var(--size);
+  }
+}
+
 .shape-interconnected {
-  width: 400px;
-  height: 300px;
-  position: relative;
-  background-color: black;
-  color: white;
-  margin: 1rem;
-  border-radius: 4px;
+  /* our shape intersect container positioned center of window */
+  /* this can be positioned where ever you want */
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: shape-interconnected var(--duration) infinite ease-out;
 
-  $width: 50px;
-  $duration: 4s;
-
-  & > .square,
-  & > .circle {
-    width: $width;
-    height: $width;
-    position: absolute;
-    border: 5px solid white;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: difference;
-    background-color: black;
-  }
-
+  /* our square calculated at 40% of parent */
+  /* position and overflow hidden are key, hiding pseudo child elems */
   & > .square {
-    border-radius: 4px;
-    top: 45%;
-    left: 55%;
-    animation: move-down-left $duration steps(4, start) infinite;
+    width: calc(var(--size) * 0.4);
+    height: calc(var(--size) * 0.4);
+    background: transparent;
+    position: absolute;
+    overflow: hidden;
+    right: 0;
+    top: 0;
+
+    /* our square before pseudo elem emulating inner white filled circle */
+    /* position absolute with animation keyframes */
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      border-radius: 50%;
+      position: absolute;
+      animation: circle-interconnected var(--duration) infinite ease-out;
+    }
+
+    /* our square before pseudo elem emulating white border */
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: var(--border) solid white;
+      position: relative;
+    }
   }
 
+  /* our circle calculated at 40% of parent */
   & > .circle {
-    border-radius: 50%;
-    top: 55%;
-    left: 45%;
-    animation: move-up-right $duration steps(4, start) infinite;
+    width: calc(var(--size) * 0.4);
+    height: calc(var(--size) * 0.4);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    /* our circle before pseudo elem emulating white border */
+    &::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: var(--border) solid white;
+      border-radius: 50%;
+      position: relative;
+    }
   }
 }
 
-@keyframes move-down-left {
+/* start top/right 150% away, overflowing out of view */
+/* 50% keyframe top/right 50% away, in view */
+@keyframes circle-interconnected {
   0% {
-    top: 25%;
-    left: 75%;
+    top: 150%;
+    right: 150%;
   }
   50% {
-    top: 45%;
-    left: 55%;
+    top: 50%;
+    right: 50%;
   }
   100% {
-    top: 25%;
-    left: 75%;
-  }
-}
-
-@keyframes move-up-right {
-  0% {
-    top: 75%;
-    left: 25%;
-  }
-  50% {
-    top: 55%;
-    left: 45%;
-  }
-  100% {
-    top: 75%;
-    left: 25%;
+    top: 150%;
+    right: 150%;
   }
 }

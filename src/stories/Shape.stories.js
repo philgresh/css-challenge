@@ -4,10 +4,7 @@ import Shape from './Shape';
 const ShapeStory = {
   title: 'Animation/Shapes',
   component: Shape,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    color: { control: 'color' },
-  },
+  argTypes: {},
 };
 
 const Template = (args) => <Shape {...args} />;
@@ -21,8 +18,6 @@ const InterconnectedSquareCircle = () => (
 
 export const Interconnected = Template.bind({});
 Interconnected.args = {
-  primary: true,
-  label: 'Shape',
   className: 'interconnected',
   comment: 'Two connected geometric shapes. Simple and strong.',
   link: 'https://dribbble.com/shots/14626933-ART-BASIS-LOGO',

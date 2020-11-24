@@ -19,7 +19,7 @@ const Shape = ({
   const cn = `shape-${className}`;
 
   return (
-    <div>
+    <div className="container">
       <div className={cn} {...props}>
         {children}
       </div>
@@ -29,10 +29,6 @@ const Shape = ({
 };
 
 Shape.propTypes = {
-  primary: PropTypes.bool,
-  backgroundColor: PropTypes.string,
-  color: PropTypes.string,
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
@@ -41,15 +37,9 @@ Shape.propTypes = {
   comment: PropTypes.string,
   link: PropTypes.string,
   id: PropTypes.string,
-  onClick: PropTypes.func,
 };
 
 Shape.defaultProps = {
-  backgroundColor: null,
-  color: null,
-  primary: false,
-  size: 'medium',
-  onClick: undefined,
   className: '',
   comment: '',
   link: '',
