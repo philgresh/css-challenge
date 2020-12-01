@@ -3,7 +3,7 @@ import React from 'react';
 import { Page } from './Page';
 import * as HeaderStories from './Header.stories';
 
-export default {
+const PageDefault = {
   title: 'Example/Page',
   component: Page,
 };
@@ -19,3 +19,5 @@ export const LoggedOut = Template.bind({});
 LoggedOut.args = {
   ...HeaderStories.LoggedOut.args,
 };
+
+export default PageDefault;
