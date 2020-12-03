@@ -3,11 +3,11 @@
   --size: 500px;
   --border: 5px;
   --duration: 4s;
-  --color: white;
+  --color: black;
 }
 
 BODY {
-  background: black;
+  // background: black;
   min-height: 100%;
 }
 
@@ -63,7 +63,7 @@ BODY {
       display: block;
       width: 100%;
       height: 100%;
-      background: #fff;
+      background: var(--color);
       border-radius: 50%;
       position: absolute;
       animation: circle-interconnected var(--duration) infinite ease-out;
@@ -76,7 +76,7 @@ BODY {
       width: 100%;
       height: 100%;
       background: transparent;
-      border: var(--border) solid white;
+      border: var(--border) solid var(--color);
       position: relative;
     }
   }
@@ -96,7 +96,7 @@ BODY {
       width: 100%;
       height: 100%;
       background: transparent;
-      border: var(--border) solid white;
+      border: var(--border) solid var(--color);
       border-radius: 50%;
       position: relative;
     }

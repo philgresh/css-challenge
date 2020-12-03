@@ -1,5 +1,6 @@
 import React from 'react';
 import Fylo from '../components/Fylo';
+import './fylo.scss';
 
 const FyloStory = {
   title: 'Frontend Mentor/Fylo Storage',
@@ -13,8 +14,9 @@ const FyloStory = {
 
 const Template = (args) => <Fylo {...args} />;
 
-export const Interconnected = Template.bind({});
-Interconnected.args = {
+export const FyloExample = Template.bind({});
+
+FyloExample.args = {
   comment:
     'A frontend challenge incorporating gradients, a progress bar, and icon animation',
   link:
