@@ -6,8 +6,10 @@ import '../../../assets/bg-desktop.png';
 const Fylo = (props) => {
   return (
     <div className="fylo">
-      <FyloActions />
-      <FyloStorage />
+      <div className="container">
+        <FyloActions />
+        <FyloStorage />
+      </div>
     </div>
   );
 };
