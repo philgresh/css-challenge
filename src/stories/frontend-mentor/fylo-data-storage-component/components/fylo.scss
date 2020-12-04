@@ -1,13 +1,87 @@
+:root {
+  --pale-blue: hsl(243, 100%, 93%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --desktop-size: 1440px;
+  --mobile-size: 375px;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Raleway', sans-serif;
+}
+
 .fylo {
   background-image: url('../../../assets/bg-desktop.png');
   background-position-y: 250%;
   height: 100%;
   position: absolute;
   width: 100%;
-  background-color: hsl(229, 57%, 11%);
+  background-color: var(--very-dark-blue);
   background-size: auto;
   background-repeat: no-repeat;
   display: flex;
-align-items: center;
-justify-content: center;
+  align-items: center;
+  justify-content: center;
+
+  & > .actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: var(--dark-blue);
+    border-radius: 8px;
+    border-top-right-radius: 86px;
+    padding: 30px;
+    padding-right: 100px;
+
+    & > .icons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 2rem;
+      $icon-width: 40px;
+
+      & > .icon {
+        padding: 5px;
+        background-color: var(--very-dark-blue);
+        border: 2px solid var(--very-dark-blue);
+        border-radius: 8px;
+        margin-right: 1rem;
+        height: $icon-width;
+        width: $icon-width;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+          background-color: var(--dark-blue);
+          transition: 0.3s ease-out;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .gradient {
+    background: rgb(255, 163, 153);
+    background: -moz-linear-gradient(
+      90deg,
+      rgba(255, 163, 153, 1) 0%,
+      rgba(255, 77, 151, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      90deg,
+      rgba(255, 163, 153, 1) 0%,
+      rgba(255, 77, 151, 1) 100%
+    );
+    background: linear-gradient(
+      90deg,
+      rgba(255, 163, 153, 1) 0%,
+      rgba(255, 77, 151, 1) 100%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffa399",endColorstr="#ff4d97",GradientType=1);
+  }
 }
