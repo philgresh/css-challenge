@@ -4,7 +4,7 @@ import Shape from './Shape';
 const ShapeStory = {
   title: 'Animation/Shapes',
   component: Shape,
-  argTypes: {},
+  argTypes: { hideNoControlsWarning: true },
 };
 
 const Template = (args) => <Shape {...args} />;
