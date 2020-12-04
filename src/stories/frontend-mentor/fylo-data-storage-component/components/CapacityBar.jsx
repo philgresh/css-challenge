@@ -1,12 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const MIN_METER_VALUE = 8;
+
 const CapacityBar = ({ used, capacity }) => {
-  const width = used / capacity * 100;
+  const width = Math.max((used / capacity) * 100, MIN_METER_VALUE);
 
   return (
     <div class="meter">
-      <span style={{ width: width + '%' }}> </span>
+      <span style={{ width: width + '%' }} />
+      <div className="ranges">
+        <span>0</span>
+        <span>{capacity}</span>
+      </div>
     </div>
   );
 };

@@ -6,7 +6,7 @@ const FyloStory = {
   title: 'Frontend Mentor/Fylo Storage',
   component: Fylo,
   argTypes: {
-    dataUsed: {
+    used: {
       control: { type: 'number', min: 0, max: 1000 },
     },
   },
@@ -17,6 +17,8 @@ const Template = (args) => <Fylo {...args} />;
 export const FyloExample = Template.bind({});
 
 FyloExample.args = {
+  used: 815,
+  capacity: 1000,
   comment:
     'A frontend challenge incorporating gradients, a progress bar, and icon animation',
   link:

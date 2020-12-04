@@ -16,13 +16,8 @@ const FyloStorage = ({ used, capacity }) => {
 };
 
 FyloStorage.propTypes = {
-  used: PropTypes.number,
-  capacity: PropTypes.number,
-};
-
-FyloStorage.defaultProps = {
-  used: 815,
-  capacity: 1000,
+  used: PropTypes.number.isRequired,
+  capacity: PropTypes.number.isRequired,
 };
 
 export default FyloStorage;
