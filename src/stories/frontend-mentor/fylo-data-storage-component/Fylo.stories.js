@@ -1,13 +1,16 @@
 import React from 'react';
-import Fylo from '../components/Fylo';
-import './fylo.scss';
+import Fylo from './components/Fylo';
+import './components/fylo.scss';
 
 const FyloStory = {
-  title: 'Frontend Mentor/Fylo Storage',
+  title: 'Frontend/Fylo Storage',
   component: Fylo,
   argTypes: {
     used: {
-      control: { type: 'number', min: 0, max: 1000 },
+      control: { type: 'range', min: 0, max: 1000 },
+    },
+    capacity: {
+      table: { disable: true },
     },
   },
 };
@@ -20,7 +23,7 @@ FyloExample.args = {
   used: 815,
   capacity: 1000,
   comment:
-    'A frontend challenge incorporating gradients, a progress bar, and icon animation',
+    'A front-end challenge incorporating gradients, a progress bar, and icon animation',
   link:
     'https://www.frontendmentor.io/challenges/fylo-data-storage-component-1dZPRbV5n',
 };
