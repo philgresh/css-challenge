@@ -1,20 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import TitleBar from './TitleBar';
+import useCSV from './useCSV';
 
-export const ASC = 'Ascending';
-export const DESC = 'Descending';
+const CSSTable = ({ csv }) => {
+  const { data, sortAsc, onChangeSort } = useCSV(csv);
 
-const CSSTable = ({stageSort, csv}) => {
   return (
-    <div>
-      
+    <div className="css-table">
+      <TitleBar sortAsc={sortAsc} source={csv} onClick={onChangeSort} />
     </div>
-  )
-}
+  );
+};
 
 CSSTable.propTypes = {
-  stageSort: PropTypes.string.isRequired,
   csv: PropTypes.string.isRequired,
-}
+};
 
-export default CSSTable
+export default CSSTable;

@@ -3,7 +3,7 @@ row,company,position,stage
 2,Ozu,Front-end Engineer,Applied
 3,Flashpoint,Software Engineer,Applied
 4,Yozio,Front-end Engineer,Follow-up
-5,Bubblemix,Front-end Engineer,Offer Accepted
+5,Bubblemix,Front-end Engineer,Rejected
 6,Wordify,Front-end Engineer,Contacted
 7,Chatterpoint,Full-stack Engineer,Rejected
 8,Tambee,Full-stack Engineer,Contacted
@@ -27,7 +27,7 @@ row,company,position,stage
 26,Oodoo,Software Engineer,Rejected
 27,Omba,Front-end Engineer,Follow-up
 28,Aibox,Full-stack Engineer,Applied
-29,Dynabox,Front-end Engineer,Offer Accepted
+29,Dynabox,Front-end Engineer,Rejected
 30,Jaxnation,Software Engineer,Phone Interview
 31,Plambee,Front-end Engineer,On-site Interview
 32,Yakijo,Full-stack Engineer,Contacted
@@ -46,7 +46,7 @@ row,company,position,stage
 45,Thoughtbeat,Front-end Engineer,On-site Interview
 46,Agivu,Full-stack Engineer,On-site Interview
 47,Eayo,Software Engineer,Applied
-48,Trudoo,Front-end Engineer,Offer Accepted
+48,Trudoo,Front-end Engineer,Rejected
 49,Rhybox,Full-stack Engineer,Follow-up
 50,Dabtype,Front-end Engineer,Follow-up
 51,Shufflester,Front-end Engineer,Contacted
@@ -56,11 +56,11 @@ row,company,position,stage
 55,Quimba,Front-end Engineer,On-site Interview
 56,Meeveo,Full-stack Engineer,Phone Interview
 57,Jaxworks,Full-stack Engineer,Phone Interview
-58,Brainsphere,Front-end Engineer,Offer Accepted
+58,Brainsphere,Front-end Engineer,Rejected
 59,Topicshots,Front-end Engineer,Rejected
 60,Omba,Front-end Engineer,Contacted
 61,Lazz,Full-stack Engineer,On-site Interview
-62,Shuffletag,Full-stack Engineer,Offer Accepted
+62,Shuffletag,Full-stack Engineer,Rejected
 63,Fivechat,Software Engineer,Phone Interview
 64,Quinu,Software Engineer,Follow-up
 65,Npath,Full-stack Engineer,Follow-up
@@ -72,7 +72,7 @@ row,company,position,stage
 71,Linkbridge,Front-end Engineer,Rejected
 72,Mydo,Full-stack Engineer,Applied
 73,Jaxspan,Front-end Engineer,On-site Interview
-74,Agimba,Full-stack Engineer,Offer Accepted
+74,Agimba,Full-stack Engineer,Rejected
 75,Meevee,Front-end Engineer,Follow-up
 76,Talane,Full-stack Engineer,On-site Interview
 77,Quatz,Full-stack Engineer,Rejected
@@ -84,7 +84,7 @@ row,company,position,stage
 83,Lazz,Front-end Engineer,Applied
 84,Topicstorm,Front-end Engineer,Rejected
 85,Zoomdog,Full-stack Engineer,Follow-up
-86,Rhyloo,Full-stack Engineer,Offer Accepted
+86,Rhyloo,Full-stack Engineer,Rejected
 87,Tekfly,Front-end Engineer,Phone Interview
 88,Browsetype,Full-stack Engineer,Phone Interview
 89,Skiba,Full-stack Engineer,Offer Accepted
