@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import FyloActions from './FyloActions';
 import FyloStorage from './FyloStorage';
 import '../../../assets/bg-desktop.png';
+import './fylo.scss';
 
 const Fylo = ({ used, capacity }) => {
   return (

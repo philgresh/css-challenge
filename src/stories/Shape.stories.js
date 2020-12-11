@@ -1,5 +1,5 @@
 import React from 'react';
-import Shape from './Shape';
+import Shape from '../dribbbles/interconnectedShapes/Shape';
 
 const ShapeStory = {
   title: 'Animation/Shapes',

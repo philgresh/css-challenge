@@ -1,6 +1,5 @@
 import React from 'react';
-import Fylo from './components/Fylo';
-import './components/fylo.scss';
+import Fylo from '../frontend-mentor/fylo-data-storage-component/components/Fylo';
 
 const FyloStory = {
   title: 'Frontend/Fylo Storage',

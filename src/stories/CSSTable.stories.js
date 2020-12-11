@@ -1,7 +1,6 @@
 import React from 'react';
-import CSSTable from './components/CSSTable';
-import './components/css-table.scss';
-import csv from './references/MOCK_DATA.csv';
+import CSSTable from '../dribbbles/css-table/components/CSSTable';
+import csv from '../dribbbles/css-table/references/MOCK_DATA.csv';
 
 const CSSTableStory = {
   title: 'Frontend/CSS Table',

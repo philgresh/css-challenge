@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import TitleBar from './TitleBar';
 import useCSV from './useCSV';
+import './css-table.scss';
 
 const CSSTable = ({ csv }) => {
   const { data, sortAsc, onChangeSort } = useCSV(csv);

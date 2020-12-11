@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from './Button';
+import { Button } from '../example/Button';
 
 const ButtonStory = {
   title: 'Example/Button',
