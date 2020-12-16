@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 
-const STAGE_ORDER = Object.freeze([
+export const STAGE_ORDER = Object.freeze([
   'Applied',
   'Contacted',
   'Phone Interview',
@@ -11,40 +11,59 @@ const STAGE_ORDER = Object.freeze([
   'Offer Accepted',
 ]);
 
-const sortByStage = (a, b, asc) => {
-  if (a.stage === b.stage) return a.row - b.row;
-  const aStageIdx = STAGE_ORDER.indexOf(a.stage);
-  const bStageIdx = STAGE_ORDER.indexOf(b.stage);
-  if (asc) return aStageIdx - bStageIdx;
-  return bStageIdx - aStageIdx;
+const papaOptions = {
+  download: true,
+  header: true,
+  error: (err) => {
+    console.error(err);
+  },
+};
+
+const setUpState = (data) => {
+  data.sort((a, b) => Number.parseInt(a.row) - Number.parseInt(b.row));
+
+  const state = {
+    stages: {},
+    rows: {},
+    orderAsc: true,
+    stageTitles: [...STAGE_ORDER],
+  };
+
+  data.forEach((ele) => {
+    const { stage, row } = ele;
+
+    if (state.stages[stage]) {
+      state.stages[stage].push(row);
+    } else state.stages[stage] = [row];
+
+    state.rows[row] = ele;
+  });
+
+  return state;
 };
 
 const useCSV = (csv) => {
-  const [data, setData] = useState({
-    asc: [],
-    desc: [],
-  });
-  const [sortAsc, setSortAsc] = useState(true);
-  const [sortedData, setSortedData] = useState([]);
+  const [state, setState] = useState();
+  // Sample state = {
+  //   rows: {
+  //     "1": {...row},
+  //   },
+  //   orderAsc: true,
+  //   stageTitles: [...STAGE_ORDER],
+  //   stages: {
+  //     ACCEPTED: [1,2,3,4]
+  //   },
+  // };
 
   useEffect(() => {
     async function readCSV() {
       console.log('Reading CSV...');
       Papa.parse(csv, {
-        download: true,
-        header: true,
+        ...papaOptions,
         complete: function (results) {
           console.log('CSV parsed.', { errors: results.errors });
-          const asc = results.data.sort((a, b) => sortByStage(a, b, true));
-          const desc = results.data.sort((a, b) => sortByStage(a, b, false));
-          setData({
-            asc,
-            desc,
-          });
-          setSortedData(asc);
-        },
-        error: (err) => {
-          console.error(err);
+          const newState = setUpState(results.data);
+          setState(newState);
         },
       });
     }
@@ -53,17 +72,13 @@ const useCSV = (csv) => {
   }, [csv]);
 
   const onChangeSort = () => {
-    if (sortAsc) {
-      setSortAsc(false);
-      setSortedData(data.desc);
-      console.log(data.desc);
-    } else {
-      setSortAsc(true);
-      setSortedData(data.asc);
-    }
+    setState((prevState) => ({
+      ...prevState,
+      orderAsc: !state.orderAsc,
+    }));
   };
 
-  return { data: sortedData, sortAsc, onChangeSort };
+  return { state, onChangeSort };
 };
 
 export default useCSV;

@@ -8,9 +8,9 @@ import {
   faBolt,
 } from '@fortawesome/free-solid-svg-icons';
 
-const TitleBar = ({ source, sortAsc, onClick }) => {
+const TitleBar = ({ source, orderAsc, onClick }) => {
   const SortIcon = () =>
-    sortAsc ? (
+    orderAsc ? (
       <FontAwesomeIcon icon={faSortUp} />
     ) : (
       <FontAwesomeIcon icon={faSortDown} />
@@ -36,7 +36,7 @@ const TitleBar = ({ source, sortAsc, onClick }) => {
 
 TitleBar.propTypes = {
   source: PropTypes.string.isRequired,
-  sortAsc: PropTypes.bool.isRequired,
+  orderAsc: PropTypes.bool.isRequired,
   onClick: PropTypes.func.isRequired,
 };
 

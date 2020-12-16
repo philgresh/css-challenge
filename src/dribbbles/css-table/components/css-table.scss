@@ -44,4 +44,59 @@ body {
       cursor: pointer;
     }
   }
+  // 'Applied',
+  // 'Contacted',
+  // 'Phone Interview',
+  // 'Follow-up',
+  // 'On-site Interview',
+  // 'Rejected',
+  // 'Offer Accepted',
+
+  & .body {
+    display: grid;
+    // grid-template-columns: 0 0 0 auto;
+    grid-template-areas: 'row company position stage';
+    grid-template-columns: 40px 1fr 1fr auto;
+
+    & .headers {
+      &.row {
+        grid-area: row;
+      }
+      &.company {
+        grid-area: company;
+      }
+      &.position {
+        grid-area: position;
+      }
+      &.stage {
+        grid-area: stage;
+      }
+    }
+
+    & .stage {
+      color: #222;
+
+      & > .applied {
+        background-color: #eee;
+      }
+      & > .contacted {
+        background-color: #fff6c5;
+      }
+      & > .followup {
+        background-color: #ffceaf;
+      }
+      & > .phone {
+        background-color: #b2d6fe;
+      }
+      & > .onsite {
+        background-color: #fac5ff;
+      }
+      & > .offer {
+        background-color: #9cf7d7;
+      }
+      & > .rejected {
+        background-color: #ffc5c5;
+      }
+    }
+  }
 }
