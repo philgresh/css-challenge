@@ -5,6 +5,7 @@ This might ease the pain of setting up a Storybook...
 ## Installation
 
 - Run `npx degit git@github.com:philgresh/css-challenge#blank-storybook` in your chosen directory (this will install files _within_ the directory rather than create a new one).
+- `git init`
 - `npm install`
 - `npm run storybook` to start a Storybook server (you'll need to open a browser window manually and head to `http://localhost:6006/`...I found the auto-open feature annoying)
 - [Start adding stories](https://www.learnstorybook.com/intro-to-storybook/react/en/simple-component/)!
