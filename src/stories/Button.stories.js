@@ -10,16 +10,6 @@ const ButtonStory = {
   },
 };
 
-const addClassnameOnClick = (id, className, duration = 2000) => {
-  const button = document.getElementById(id);
-
-  button.classList.add(className);
-
-  setTimeout(() => {
-    button.classList.remove(className);
-  }, duration);
-};
-
 const Template = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
@@ -43,15 +33,6 @@ export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
-};
-
-export const Trash = Template.bind({});
-Trash.args = {
-  size: 'large',
-  label: 'Delete Item',
-  className: 'icon delete-item',
-  onClick: () => addClassnameOnClick('delete-item', 'notext'),
-  id: 'delete-item',
 };
 
 export default ButtonStory;
